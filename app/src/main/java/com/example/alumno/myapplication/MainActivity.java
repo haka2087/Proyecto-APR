@@ -1,5 +1,6 @@
 package com.example.alumno.myapplication;
 
+import android.content.Intent;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -35,8 +36,8 @@ public class MainActivity extends AppCompatActivity {
 
         ingresar = (Button)findViewById(R.id.asdf);
 
-        lectura = (EditText)findViewById(R.id.lectura);
-        medidor = (EditText)findViewById(R.id.medidor);
+
+
         
         ingresar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                     .addFormDataPart("medidor", medidor)
                     .build();
             Request request = new Request.Builder()
-                    .url("http://192.168.64.2/otto/lectura.php")
+                    .url("http://172.20.10.10/pro/lectura.php")
                     .post(requestBody)
                     .build();
             OkHttpClient okHttpClient = new OkHttpClient();
@@ -81,5 +82,22 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
+//METODO PARA PASAR DE UNA ACTICITY A OTRO con boton "EXPORTAR LECTURAS":
+
+    public void Exportar (View view) {
+        Intent exportar = new Intent(this, ExportarActivity.class);
+        startActivity(exportar);
+
+
+    }
+
+    public void Registrar (View view) {
+        Intent registrar = new Intent(this, RegistrarLecturasActivity.class);
+        startActivity(registrar);
+
+
+    }
+
 
 }
