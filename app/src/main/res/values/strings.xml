@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="nueva_lectura">Ingrese_Lectura</string>
+    <string name="lectura_anterior">Lectura_Anterior</string>
+</resources>
